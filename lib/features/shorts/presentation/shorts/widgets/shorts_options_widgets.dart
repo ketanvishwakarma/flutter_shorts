@@ -19,39 +19,37 @@ class FlutterShortsBar extends ConsumerWidget {
 
     return AnimatedSlide(
       duration: const Duration(milliseconds: 150),
-      offset: showOptions ? Offset.zero : const Offset(0, -0.8),
+      offset: showOptions ? Offset.zero : const Offset(0, -1),
       curve: Curves.easeInOut,
-      child: SafeArea(
-        key: UniqueKey(),
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSizes.large,
-          ),
-          color: colorScheme.background.withOpacity(0.2),
-          alignment: Alignment.center,
-          height: kBottomNavigationBarHeight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'FlutterShorts',
-                style: textTheme.titleLarge,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSizes.large,
+        ),
+        color: colorScheme.background.withOpacity(0.8),
+        alignment: Alignment.center,
+        height: kToolbarHeight + textTheme.titleLarge!.fontSize!.ceil(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              'FlutterShorts',
+              style: textTheme.titleLarge,
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                CupertinoIcons.person_fill,
               ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (context) => const ProfileScreen(),
-                    ),
-                  );
-                },
-                icon: const Icon(
-                  CupertinoIcons.person_fill,
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
@@ -80,7 +78,7 @@ class OptionsWidget extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: AppSizes.large,
           ),
-          color: colorScheme.background.withOpacity(0.5),
+          color: colorScheme.background.withOpacity(0.8),
           alignment: Alignment.center,
           height: kBottomNavigationBarHeight,
           child: Row(

@@ -20,6 +20,7 @@ class _ShortsScreenState extends ConsumerState<ShortsScreen> {
     final shortsValue = ref.watch(shortsProvider);
 
     return StatusBarAnnotatedRegionWidget(
+      allowTransparent: true,
       child: Scaffold(
         body: shortsValue.when(
           data: (shorts) {

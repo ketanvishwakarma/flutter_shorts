@@ -48,7 +48,7 @@ class _ShortContentsWidgetState extends ConsumerState<ShortContentWidget> {
                     gapHLarge,
                     Text(
                       widget.short.title,
-                      style: textTheme.titleMedium,
+                      style: textTheme.titleLarge,
                     ),
                     gapHMedium,
                     Flexible(
@@ -81,22 +81,20 @@ class _MediaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return SafeArea(
-      child: AspectRatio(
-        aspectRatio: 16 / 9,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            ShortMediaWidget(url: url),
-            GradientOverlayWidget(
-              colors: [
-                colorScheme.background,
-                Colors.transparent,
-                colorScheme.background,
-              ],
-            ),
-          ],
-        ),
+    return AspectRatio(
+      aspectRatio: 3 / 2,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          ShortMediaWidget(url: url),
+          GradientOverlayWidget(
+            colors: [
+              colorScheme.background.withOpacity(0.8),
+              Colors.transparent,
+              colorScheme.background.withOpacity(0.8),
+            ],
+          ),
+        ],
       ),
     );
   }

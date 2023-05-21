@@ -29,10 +29,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'FlutterShorts',
         darkTheme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
-            brightness: Brightness.dark,
-          ),
+          colorScheme: const ColorScheme.highContrastDark(),
           useMaterial3: true,
         ).copyWith(
           chipTheme: ChipThemeData(
