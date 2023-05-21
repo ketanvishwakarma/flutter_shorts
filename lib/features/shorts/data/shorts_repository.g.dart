@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_in_controller.dart';
+part of 'shorts_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$signInControllerHash() => r'20d10b770d956e8cb638f274ce6549d4d9fc988b';
+String _$shortsRepositoryHash() => r'043e854b0a959b62bf58c6a4492677ba6b4910ae';
 
-/// See also [SignInController].
-@ProviderFor(SignInController)
-final signInControllerProvider =
-    AutoDisposeAsyncNotifierProvider<SignInController, void>.internal(
-  SignInController.new,
-  name: r'signInControllerProvider',
+/// See also [shortsRepository].
+@ProviderFor(shortsRepository)
+final shortsRepositoryProvider = Provider<ShortsRepository>.internal(
+  shortsRepository,
+  name: r'shortsRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$signInControllerHash,
+      : _$shortsRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SignInController = AutoDisposeAsyncNotifier<void>;
+typedef ShortsRepositoryRef = ProviderRef<ShortsRepository>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

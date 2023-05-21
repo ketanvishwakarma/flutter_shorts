@@ -1,25 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_in_controller.dart';
+part of 'create_short_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$signInControllerHash() => r'20d10b770d956e8cb638f274ce6549d4d9fc988b';
+String _$createShortControllerHash() =>
+    r'5c611f76cf25147e66d5eb9a61e94d3585aa6995';
 
-/// See also [SignInController].
-@ProviderFor(SignInController)
-final signInControllerProvider =
-    AutoDisposeAsyncNotifierProvider<SignInController, void>.internal(
-  SignInController.new,
-  name: r'signInControllerProvider',
+/// See also [CreateShortController].
+@ProviderFor(CreateShortController)
+final createShortControllerProvider =
+    AutoDisposeAsyncNotifierProvider<CreateShortController, void>.internal(
+  CreateShortController.new,
+  name: r'createShortControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$signInControllerHash,
+      : _$createShortControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SignInController = AutoDisposeAsyncNotifier<void>;
+typedef _$CreateShortController = AutoDisposeAsyncNotifier<void>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
