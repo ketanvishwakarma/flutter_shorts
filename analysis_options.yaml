@@ -7,5 +7,6 @@ linter:
   rules:
     public_member_api_docs: false
     library_private_types_in_public_api: false
+    use_setters_to_change_properties: false
 custom_lint:
   rules:

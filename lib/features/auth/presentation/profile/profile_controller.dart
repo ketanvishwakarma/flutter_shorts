@@ -1,6 +1,5 @@
 import 'package:flutter_shorts/features/auth/data/auth_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 part 'profile_controller.g.dart';
 
@@ -15,10 +14,5 @@ class ProfileController extends _$ProfileController {
     state = await AsyncValue.guard(authRepository.signOut);
 
     return state.hasError == false;
-  }
-
-  User? getUser() {
-    final authRepository = ref.read(authRepositoryProvider);
-    return authRepository.currentUser;
   }
 }

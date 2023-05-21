@@ -38,3 +38,8 @@ AuthRepository authRepository(AuthRepositoryRef ref) {
 Stream<User?> authStateChanges(AuthStateChangesRef ref) {
   return ref.read(authRepositoryProvider).authStateChanges();
 }
+
+@Riverpod(keepAlive: true)
+User? appUser(AppUserRef ref) {
+  return ref.watch(authRepositoryProvider).currentUser;
+}

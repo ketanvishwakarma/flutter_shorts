@@ -36,4 +36,18 @@ final authStateChangesProvider = StreamProvider<User?>.internal(
 );
 
 typedef AuthStateChangesRef = StreamProviderRef<User?>;
+String _$appUserHash() => r'4e8e8553ecaac43a60a30d9949176dd18f494507';
+
+/// See also [appUser].
+@ProviderFor(appUser)
+final appUserProvider = Provider<User?>.internal(
+  appUser,
+  name: r'appUserProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$appUserHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef AppUserRef = ProviderRef<User?>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

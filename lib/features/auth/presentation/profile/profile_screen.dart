@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shorts/common_widgets/custom_dialogs.dart';
+import 'package:flutter_shorts/features/auth/data/auth_repository.dart';
 import 'package:flutter_shorts/features/auth/presentation/profile/profile_controller.dart';
 import 'package:flutter_shorts/features/shorts/presentation/create_short/create_short_screen.dart';
 
@@ -47,8 +48,7 @@ class _UserEmailWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final profileController = ref.watch(profileControllerProvider.notifier);
-    final user = profileController.getUser();
+    final user = ref.watch(appUserProvider);
     if (user != null) {
       return ListTile(
         leading: const Icon(CupertinoIcons.person_circle),

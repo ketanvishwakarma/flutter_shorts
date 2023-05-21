@@ -21,12 +21,13 @@ final shortsRepositoryProvider = Provider<ShortsRepository>.internal(
 );
 
 typedef ShortsRepositoryRef = ProviderRef<ShortsRepository>;
-String _$shortsHash() => r'd747422bcc1cfea927a4f2167d7e21d8b4be93d5';
+String _$shortsHash() => r'80950e643e381affa50a10f98fed3c0c1160cabb';
 
-/// See also [shorts].
-@ProviderFor(shorts)
-final shortsProvider = AutoDisposeFutureProvider<List<Short>>.internal(
-  shorts,
+/// See also [Shorts].
+@ProviderFor(Shorts)
+final shortsProvider =
+    AutoDisposeAsyncNotifierProvider<Shorts, List<Short>>.internal(
+  Shorts.new,
   name: r'shortsProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : _$shortsHash,
@@ -34,5 +35,5 @@ final shortsProvider = AutoDisposeFutureProvider<List<Short>>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef ShortsRef = AutoDisposeFutureProviderRef<List<Short>>;
+typedef _$Shorts = AutoDisposeAsyncNotifier<List<Short>>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
