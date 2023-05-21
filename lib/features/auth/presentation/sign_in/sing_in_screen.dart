@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shorts/common_widgets/custom_button.dart';
 import 'package:flutter_shorts/common_widgets/custom_dialogs.dart';
+import 'package:flutter_shorts/common_widgets/status_bar_annotated_region_widget.dart';
 import 'package:flutter_shorts/core/constants/app_sizes.dart';
 import 'package:flutter_shorts/features/auth/presentation/sign_in/sign_in_controller.dart';
 import 'package:flutter_shorts/utils/validators.dart';
@@ -41,10 +41,7 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
       },
     );
 
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light.copyWith(
-        statusBarColor: colorScheme.background.withOpacity(0.5),
-      ),
+    return StatusBarAnnotatedRegionWidget(
       child: Scaffold(
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(AppSizes.large),
