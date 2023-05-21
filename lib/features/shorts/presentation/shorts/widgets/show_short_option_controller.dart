@@ -1,9 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'shorts_options_controller.g.dart';
+part 'show_short_option_controller.g.dart';
 
 @riverpod
-class ShortsOptionController extends _$ShortsOptionController {
+class ShowShortOptionController extends _$ShowShortOptionController {
   @override
   bool build() {
     return true;

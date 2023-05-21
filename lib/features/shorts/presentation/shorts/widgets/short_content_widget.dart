@@ -4,7 +4,7 @@ import 'package:flutter_shorts/common_widgets/gradient_overlay_widget.dart';
 import 'package:flutter_shorts/core/constants/app_sizes.dart';
 import 'package:flutter_shorts/features/shorts/model/short/short.dart';
 import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/short_media_widget.dart';
-import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/shorts_options_controller.dart';
+import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/show_short_option_controller.dart';
 
 class ShortContentWidget extends ConsumerStatefulWidget {
   const ShortContentWidget({
@@ -35,7 +35,7 @@ class _ShortContentsWidgetState extends ConsumerState<ShortContentWidget> {
               behavior: HitTestBehavior.opaque,
               onTap: () {
                 ref
-                    .read(shortsOptionControllerProvider.notifier)
+                    .read(showShortOptionControllerProvider.notifier)
                     .toggleShowOptions();
               },
               child: Padding(

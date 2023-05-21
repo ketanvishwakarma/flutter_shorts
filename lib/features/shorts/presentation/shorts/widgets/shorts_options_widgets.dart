@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shorts/core/constants/app_sizes.dart';
-import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/shorts_options_controller.dart';
+import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/show_short_option_controller.dart';
 
 class FlutterShortsBar extends ConsumerWidget {
   const FlutterShortsBar({
@@ -14,7 +14,7 @@ class FlutterShortsBar extends ConsumerWidget {
     final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
 
-    final showOptions = ref.watch(shortsOptionControllerProvider);
+    final showOptions = ref.watch(showShortOptionControllerProvider);
 
     return AnimatedSlide(
       duration: const Duration(milliseconds: 150),
@@ -59,7 +59,7 @@ class OptionsWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    final showOptions = ref.watch(shortsOptionControllerProvider);
+    final showOptions = ref.watch(showShortOptionControllerProvider);
 
     return AnimatedSlide(
       duration: const Duration(milliseconds: 150),
