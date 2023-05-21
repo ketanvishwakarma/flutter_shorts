@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shorts/core/constants/app_sizes.dart';
+import 'package:flutter_shorts/features/auth/presentation/profile/profile_screen.dart';
 import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/show_short_option_controller.dart';
 
 class FlutterShortsBar extends ConsumerWidget {
@@ -37,7 +38,14 @@ class FlutterShortsBar extends ConsumerWidget {
                 style: textTheme.titleLarge,
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (context) => const ProfileScreen(),
+                    ),
+                  );
+                },
                 icon: const Icon(
                   CupertinoIcons.person_fill,
                 ),
