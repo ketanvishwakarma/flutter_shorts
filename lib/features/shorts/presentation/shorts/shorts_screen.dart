@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_shorts/common_widgets/status_bar_annotated_region_widget.dart';
 import 'package:flutter_shorts/features/shorts/data/shorts_repository.dart';
+import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/short_content_widget.dart';
+import 'package:flutter_shorts/features/shorts/presentation/shorts/widgets/shorts_options_widgets.dart';
 
 class ShortsScreen extends ConsumerStatefulWidget {
   const ShortsScreen({super.key});
@@ -10,46 +13,45 @@ class ShortsScreen extends ConsumerStatefulWidget {
 }
 
 class _ShortsScreenState extends ConsumerState<ShortsScreen> {
+  final pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
     final shortsValue = ref.watch(shortsProvider);
-    return shortsValue.when(
-      data: (shorts) {
-        return Scaffold(
-          body: PageView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: shorts.length,
-            itemBuilder: (context, index) {
-              final short = shorts.elementAt(index);
-              return Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(short.title),
-                    Text(short.description),
-                    Text(short.mediaUrl),
-                    Text(short.moreUrl),
-                  ],
+
+    return StatusBarAnnotatedRegionWidget(
+      child: Scaffold(
+        body: shortsValue.when(
+          data: (shorts) {
+            return Stack(
+              children: [
+                PageView.builder(
+                  controller: pageController,
+                  scrollDirection: Axis.vertical,
+                  itemCount: shorts.length,
+                  onPageChanged: (value) {},
+                  itemBuilder: (context, index) {
+                    final short = shorts.elementAt(index);
+                    return ShortContentWidget(short: short);
+                  },
                 ),
-              );
-            },
-          ),
-        );
-      },
-      error: (error, stackTrace) {
-        return const Scaffold(
-          body: SizedBox.shrink(),
-        );
-      },
-      loading: () {
-        return const Scaffold(
-          body: Center(
-            child: CircularProgressIndicator.adaptive(),
-          ),
-        );
-      },
+                const FlutterShortsBar(),
+                const OptionsWidget(),
+              ],
+            );
+          },
+          error: (error, stackTrace) {
+            return const SizedBox.shrink();
+          },
+          loading: () {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator.adaptive(),
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

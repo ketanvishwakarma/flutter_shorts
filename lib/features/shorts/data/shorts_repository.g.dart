@@ -21,7 +21,7 @@ final shortsRepositoryProvider = Provider<ShortsRepository>.internal(
 );
 
 typedef ShortsRepositoryRef = ProviderRef<ShortsRepository>;
-String _$shortsHash() => r'9f9df00dc7504409b00b67484f54a13a267f2763';
+String _$shortsHash() => r'd747422bcc1cfea927a4f2167d7e21d8b4be93d5';
 
 /// See also [shorts].
 @ProviderFor(shorts)
