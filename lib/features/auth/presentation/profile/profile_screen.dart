@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shorts/common_widgets/custom_dialogs.dart';
 import 'package:flutter_shorts/features/auth/presentation/profile/profile_controller.dart';
+import 'package:flutter_shorts/features/shorts/presentation/create_short/create_short_screen.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -23,7 +24,12 @@ class ProfileScreen extends ConsumerWidget {
             leading: const Icon(CupertinoIcons.add_circled),
             title: const Text('Create Short'),
             onTap: () {
-              //
+              Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (context) => const CreateShortScreen(),
+                ),
+              );
             },
           ),
           const Divider(
