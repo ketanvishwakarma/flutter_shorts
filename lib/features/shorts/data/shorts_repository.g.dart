@@ -21,4 +21,18 @@ final shortsRepositoryProvider = Provider<ShortsRepository>.internal(
 );
 
 typedef ShortsRepositoryRef = ProviderRef<ShortsRepository>;
+String _$shortsHash() => r'9f9df00dc7504409b00b67484f54a13a267f2763';
+
+/// See also [shorts].
+@ProviderFor(shorts)
+final shortsProvider = AutoDisposeFutureProvider<List<Short>>.internal(
+  shorts,
+  name: r'shortsProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$shortsHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef ShortsRef = AutoDisposeFutureProviderRef<List<Short>>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_shorts/features/auth/data/auth_repository.dart';
 import 'package:flutter_shorts/features/auth/presentation/sign_in/sing_in_screen.dart';
-import 'package:flutter_shorts/features/shorts/presentation/create_short/create_short_screen.dart';
+import 'package:flutter_shorts/features/shorts/presentation/shorts/shorts_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
@@ -44,7 +44,8 @@ class AuthWrapper extends ConsumerWidget {
     return ref.watch(authStateChangesProvider).maybeWhen(
       data: (data) {
         if (data != null) {
-          return const CreateShortScreen();
+          return const ShortsScreen();
+          // return const CreateShortScreen();
           // return Scaffold(
           //   body: Center(
           //     child: Column(
