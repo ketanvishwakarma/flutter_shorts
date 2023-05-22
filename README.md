@@ -16,8 +16,8 @@
 - Create new shorts
 - Check out more about the information present in the short via `more` 
 
-# Supabase in use
-- Supabse authentication with magic link
+# Supabase features in use
+- Supabase authentication with magic link
 - Supabase database to store shorts
 
 # Inspiration
