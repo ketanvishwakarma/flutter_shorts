@@ -139,6 +139,9 @@ class _CreateShortScreenState extends ConsumerState<CreateShortScreen> {
         await showAlertDialog(
           context: context,
           title: 'Successfully Created ✅',
+          content:
+              // ignore: lines_longer_than_80_chars
+              'Thank you for the contribution, Once your short is approved then it will be visible in the feed.',
         );
       }
     }

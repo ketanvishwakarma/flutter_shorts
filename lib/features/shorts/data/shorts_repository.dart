@@ -2,11 +2,7 @@ import 'package:flutter_shorts/features/shorts/model/create_short/create_short.d
 import 'package:flutter_shorts/features/shorts/model/short/short.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart'
-    show
-        PostgrestList,
-        Supabase,
-        SupabaseClient,
-        SupabaseQueryBuilder;
+    show PostgrestList, Supabase, SupabaseClient, SupabaseQueryBuilder;
 
 part 'shorts_repository.g.dart';
 
@@ -22,7 +18,10 @@ class ShortsRepository {
   }
 
   Future<List<Short>> getShorts() async {
-    final data = await _shortsTable.select<PostgrestList>();
+    final data = await _shortsTable
+        .select<PostgrestList>()
+        .eq('isPublished', true)
+        .order('createdAt');
     final list = data.map(Short.fromJson).toList();
     return list;
   }

@@ -15,6 +15,7 @@ class Short with _$Short {
     required String description,
     required String moreUrl,
     required String creatorId,
+    @Default(false) bool isPublished,
     @Default([]) List<String> likes,
   }) = _Short;
 

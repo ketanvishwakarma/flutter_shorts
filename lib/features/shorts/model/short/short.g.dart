@@ -14,6 +14,7 @@ _$_Short _$$_ShortFromJson(Map<String, dynamic> json) => _$_Short(
       description: json['description'] as String,
       moreUrl: json['moreUrl'] as String,
       creatorId: json['creatorId'] as String,
+      isPublished: json['isPublished'] as bool? ?? false,
       likes:
           (json['likes'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
@@ -27,5 +28,6 @@ Map<String, dynamic> _$$_ShortToJson(_$_Short instance) => <String, dynamic>{
       'description': instance.description,
       'moreUrl': instance.moreUrl,
       'creatorId': instance.creatorId,
+      'isPublished': instance.isPublished,
       'likes': instance.likes,
     };

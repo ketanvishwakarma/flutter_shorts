@@ -27,6 +27,7 @@ mixin _$Short {
   String get description => throw _privateConstructorUsedError;
   String get moreUrl => throw _privateConstructorUsedError;
   String get creatorId => throw _privateConstructorUsedError;
+  bool get isPublished => throw _privateConstructorUsedError;
   List<String> get likes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,6 +48,7 @@ abstract class $ShortCopyWith<$Res> {
       String description,
       String moreUrl,
       String creatorId,
+      bool isPublished,
       List<String> likes});
 }
 
@@ -70,6 +72,7 @@ class _$ShortCopyWithImpl<$Res, $Val extends Short>
     Object? description = null,
     Object? moreUrl = null,
     Object? creatorId = null,
+    Object? isPublished = null,
     Object? likes = null,
   }) {
     return _then(_value.copyWith(
@@ -101,6 +104,10 @@ class _$ShortCopyWithImpl<$Res, $Val extends Short>
           ? _value.creatorId
           : creatorId // ignore: cast_nullable_to_non_nullable
               as String,
+      isPublished: null == isPublished
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
+              as bool,
       likes: null == likes
           ? _value.likes
           : likes // ignore: cast_nullable_to_non_nullable
@@ -123,6 +130,7 @@ abstract class _$$_ShortCopyWith<$Res> implements $ShortCopyWith<$Res> {
       String description,
       String moreUrl,
       String creatorId,
+      bool isPublished,
       List<String> likes});
 }
 
@@ -142,6 +150,7 @@ class __$$_ShortCopyWithImpl<$Res> extends _$ShortCopyWithImpl<$Res, _$_Short>
     Object? description = null,
     Object? moreUrl = null,
     Object? creatorId = null,
+    Object? isPublished = null,
     Object? likes = null,
   }) {
     return _then(_$_Short(
@@ -173,6 +182,10 @@ class __$$_ShortCopyWithImpl<$Res> extends _$ShortCopyWithImpl<$Res, _$_Short>
           ? _value.creatorId
           : creatorId // ignore: cast_nullable_to_non_nullable
               as String,
+      isPublished: null == isPublished
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
+              as bool,
       likes: null == likes
           ? _value._likes
           : likes // ignore: cast_nullable_to_non_nullable
@@ -192,6 +205,7 @@ class _$_Short implements _Short {
       required this.description,
       required this.moreUrl,
       required this.creatorId,
+      this.isPublished = false,
       final List<String> likes = const []})
       : _likes = likes;
 
@@ -212,6 +226,9 @@ class _$_Short implements _Short {
   final String moreUrl;
   @override
   final String creatorId;
+  @override
+  @JsonKey()
+  final bool isPublished;
   final List<String> _likes;
   @override
   @JsonKey()
@@ -223,7 +240,7 @@ class _$_Short implements _Short {
 
   @override
   String toString() {
-    return 'Short(id: $id, createdAt: $createdAt, mediaUrl: $mediaUrl, title: $title, description: $description, moreUrl: $moreUrl, creatorId: $creatorId, likes: $likes)';
+    return 'Short(id: $id, createdAt: $createdAt, mediaUrl: $mediaUrl, title: $title, description: $description, moreUrl: $moreUrl, creatorId: $creatorId, isPublished: $isPublished, likes: $likes)';
   }
 
   @override
@@ -242,6 +259,8 @@ class _$_Short implements _Short {
             (identical(other.moreUrl, moreUrl) || other.moreUrl == moreUrl) &&
             (identical(other.creatorId, creatorId) ||
                 other.creatorId == creatorId) &&
+            (identical(other.isPublished, isPublished) ||
+                other.isPublished == isPublished) &&
             const DeepCollectionEquality().equals(other._likes, _likes));
   }
 
@@ -256,6 +275,7 @@ class _$_Short implements _Short {
       description,
       moreUrl,
       creatorId,
+      isPublished,
       const DeepCollectionEquality().hash(_likes));
 
   @JsonKey(ignore: true)
@@ -281,6 +301,7 @@ abstract class _Short implements Short {
       required final String description,
       required final String moreUrl,
       required final String creatorId,
+      final bool isPublished,
       final List<String> likes}) = _$_Short;
 
   factory _Short.fromJson(Map<String, dynamic> json) = _$_Short.fromJson;
@@ -299,6 +320,8 @@ abstract class _Short implements Short {
   String get moreUrl;
   @override
   String get creatorId;
+  @override
+  bool get isPublished;
   @override
   List<String> get likes;
   @override
