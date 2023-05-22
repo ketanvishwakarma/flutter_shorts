@@ -8,7 +8,7 @@
 </div>
 
 # Motivation 
- To explore learn about Riverpod, Riverpod app architecture, GoRouter and Feature-first project structure
+ To explore and learn about supabase
 
 # Current Features
 - Login with magic link
