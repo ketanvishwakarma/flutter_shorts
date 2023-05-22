@@ -86,12 +86,14 @@ class _MediaWidget extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          ShortMediaWidget(url: url),
+        ShortMediaWidget(url: url),
           GradientOverlayWidget(
             colors: [
               colorScheme.background.withOpacity(0.8),
               Colors.transparent,
-              colorScheme.background.withOpacity(0.8),
+              Colors.transparent,
+              colorScheme.background.withOpacity(0.6),
+              colorScheme.background,
             ],
           ),
         ],

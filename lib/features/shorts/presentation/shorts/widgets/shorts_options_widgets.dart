@@ -28,32 +28,36 @@ class FlutterShortsBar extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSizes.large,
+          vertical: AppSizes.small,
         ),
         color: colorScheme.background.withOpacity(0.8),
         alignment: Alignment.center,
-        height: kToolbarHeight + textTheme.titleLarge!.fontSize!.ceil(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              'FlutterShorts',
-              style: textTheme.titleLarge,
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (context) => const ProfileScreen(),
-                  ),
-                );
-              },
-              icon: const Icon(
-                CupertinoIcons.person_fill,
+        height: kToolbarHeight + textTheme.titleMedium!.fontSize!.ceil(),
+        child: SafeArea(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                'FlutterShorts',
+                style: textTheme.titleLarge,
               ),
-            )
-          ],
+              IconButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (context) => const ProfileScreen(),
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  CupertinoIcons.person_fill,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -96,7 +100,6 @@ class OptionsWidget extends ConsumerWidget {
                     ref
                         .read(shortControllerProvider.notifier)
                         .changeCurrentShort(data);
-                    
                   },
                   error: (error, _) {
                     showExceptionAlertDialog(
