@@ -17,8 +17,8 @@
 - Check out more about the information present in the short via `more` 
 
 # Supabase in use
-- Supabse authentication via magic link
-- Supbase database to store shorts
+- Supabse authentication with magic link
+- Supabase database to store shorts
 
 # Inspiration
 - https://inshorts.com/
