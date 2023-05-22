@@ -7,6 +7,8 @@
 <img width="290" alt="image" src="https://github.com/ketanvishwakarma/flutter_shorts/assets/42869168/a553b474-c928-4c08-974b-3f518f06a173">
 </div>
 
+## [Check out video](https://drive.google.com/file/d/1FjHCCyjCEOzJ3xSKf2xnlbwBK8uJxiIC/view?usp=share_link)
+
 # Motivation 
  To explore and learn about supabase
 
